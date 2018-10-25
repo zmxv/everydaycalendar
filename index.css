@@ -1,0 +1,224 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	padding: 0;
+	margin: 0;
+	font: inherit;
+	font-size: 100%;
+	vertical-align: baseline;
+	border: 0;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+/* custom styles */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, serif;
+    font-size: 1em;
+    line-height: 1.5;
+    color: #333;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .8);
+    background: #7CCBC4;
+}
+
+a {
+    color: #1D6DCA;
+}
+
+p {
+    margin-bottom: 16px;
+}
+
+p > iframe {
+    margin: 16px auto 0;
+}
+
+.outer {
+    width: 618px;
+    height: 1000px;
+    margin: 90px auto 180px;
+    position: relative;
+    perspective: 3000px;
+}
+
+#inner {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: .3s ease-out;
+}
+
+.front, .back {
+    width: 618px;
+    height: 1000px;
+    backface-visibility: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.front {
+    z-index: 1;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.flipped {
+    transform: rotateY(180deg);
+}
+
+.frame {
+    width: 618px;
+    height: 1000px;
+    background-image: url("frame.jpg");
+    background-size: contain;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .8);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.board {
+    position: absolute;
+    width: 590px;
+    height: 972px;
+    top: 14px;
+    left: 14px;
+    background: #151515;
+}
+
+#board {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.lit, .dim, .dots, .bolt, .mon, .hole, .flip {
+    position: absolute;
+    background-image: url("sprite.png");
+}
+
+.lit, .dim {
+    width: 36px;
+    height: 28px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 28px;
+    user-select: none;
+}
+
+.lit {
+    cursor: pointer;
+    color: #ffffc5;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, .5);
+    transition: opacity .3s ease-out;
+}
+
+.dim {
+    background-position-y: -28px;
+    color: #7b6f4f;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, .5);
+}
+
+.dots {
+    width: 36px;
+    height: 10px;
+    background-position-y: -56px;
+}
+
+.bolt {
+    width: 14px;
+    height: 14px;
+    background-position-y: -66px;
+}
+
+.mon {
+    width: 36px;
+    height: 24px;
+}
+
+/* flip over icon by Nathan Smith from the Noun Project */
+.flip {
+    width: 36px;
+    height: 36px;
+    background-position-y: -368px;
+    opacity: .5;
+    cursor: pointer;
+    transition: opacity .3s ease-out;
+    left: 291px;
+    top: 1072px;
+}
+
+.flip:hover {
+    opacity: 1;
+}
+
+.mirrored {
+    transform: scaleX(-1);
+}
+
+.hole {
+    width: 36px;
+    height: 52px;
+    background-position-y: -404px;
+    top: 91px;
+}
+
+.left.hole {
+    left: 171px;
+}
+
+.right.hole {
+    left: 411px;
+}
+
+.title {
+    margin: 40px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #151515;
+}
+
+.content {
+    margin: 80px 29px 29px;
+}
