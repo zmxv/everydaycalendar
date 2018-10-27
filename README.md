@@ -2,7 +2,7 @@
 
 A web app of Simone Giertz's Every Day Calendar gadget.
 
-https://zmxv.github.io/everydaycalendar
+https://everydaycalendar.app/
 
 Simone Giertz, a YouTube celebrity famous for her hilarious robotics inventions, has announced her first hardware product for sale — the "Every Day Calendar" that keeps track of your daily goals and motivates you to develop good habits: https://www.youtube.com/watch?v=-lpvy-xkSNA
 
