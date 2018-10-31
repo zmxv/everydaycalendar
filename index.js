@@ -7,11 +7,13 @@
     var board = document.getElementById("board");
     renderBoard(year);
 
-    // bind buttons
-    var buttons = document.getElementsByClassName("flip");
-    for (var i = 0; i < buttons.length; i++) {
-        buttons[i].addEventListener("click", flipBoard);
-    }
+    // bind events
+    addListener('click', '.flip', flipBoard);
+    addListener('mousedown', '.lit', toggleCell);
+    addListener('touchstart', '.lit', toggleCell);
+    addListener('mouseover', '.lit', toggleCell, function(event) {
+        return 'buttons' in event && event.buttons > 0;
+    });
 
     function flipBoard() {
         var inner = document.getElementById("inner");
@@ -50,8 +52,6 @@
         var lit = addDiv("lit", x, y);
         lit.innerHTML = day + 1;
         lit.setAttribute("data-index", index);
-        lit.addEventListener("mousedown", toggleCell);
-        lit.addEventListener("touchstart", toggleCell);
         lit.style.opacity = getBit(state, index) ? 1 : 0;
     }
 
@@ -70,6 +70,21 @@
         div.style.top = y + "px";
         (parent || board).appendChild(div);
         return div;
+    }
+
+    function addListener(event, match, action, check) {
+        document.addEventListener(event, function (event) {
+            if (event.target.matches(match)) {
+                if(check) {
+                    if(check(event)) {
+                        action(event);
+                    }
+                }
+                else {
+                    action(event);
+                }
+            }
+        }, {passive: false});
     }
 
     function storeState(year, state) {
