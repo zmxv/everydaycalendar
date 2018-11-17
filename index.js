@@ -36,10 +36,10 @@
             div.style.backgroundPositionY = -80 - i * 24 + "px";
         }
         // render cells
-        var d = new Date(year, 0, 1, 12), i = 0;
+        var d = new Date(year, 0, 1), i = 0;
         while (d.getFullYear() == year) {
             renderCell(d.getMonth(), d.getDate() - 1, i++);
-            d = new Date(d.getTime() + 86400000);
+            d.setDate(d.getDate() + 1);
         }
     }
 
