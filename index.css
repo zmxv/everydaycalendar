@@ -52,12 +52,11 @@ body {
     font-size: 1em;
     line-height: 1.5;
     color: #333;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, .8);
     background: #7CCBC4;
 }
 
 a {
-    color: #1D6DCA;
+    color: #0e3f7d;
 }
 
 p {
@@ -222,4 +221,9 @@ h1 {
 
 .content {
     margin: 80px 29px 29px;
+}
+
+.blurb {
+    margin-bottom: 60px;
+    text-align: center;
 }
