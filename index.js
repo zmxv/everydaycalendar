@@ -1,3 +1,6 @@
+console.log('This web app serves as a virtual substitute of Every Day Calendar'); 
+console.log('It stores all your achievements in your browser without sending anything to the server.'); 
+
 (function () {
     var year = new Date().getFullYear();
     // state is an array of 61 six-bit integers that represents
