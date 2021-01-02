@@ -173,6 +173,29 @@ p > iframe {
     height: 24px;
 }
 
+.year-selector {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 1012px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.text-button {
+    opacity: .5;
+    cursor: pointer;
+    padding: 0 16px;
+}
+
+.text-button:hover {
+    opacity: 1;
+}
+
 /* flip over icon by Nathan Smith from the Noun Project */
 .flip {
     width: 36px;

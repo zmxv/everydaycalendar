@@ -4,7 +4,7 @@
     // up to 366 days of progress. Each year's state is serialized as
     // 61 printable characters ranging from "*" to "i".
     var state = loadState(year);
-    var board = document.getElementById("board");
+    var board = getEl("board");
     renderBoard(year);
 
     // bind events
@@ -14,9 +14,24 @@
     addListener('mouseover', '.lit', toggleCell, function(event) {
         return 'buttons' in event && event.buttons > 0;
     });
+    getEl("prev-year").addEventListener("click", selectYear(-1));
+    getEl("next-year").addEventListener("click", selectYear(1));
+
+
+    function selectYear(delta) {
+        return function() {
+            year += delta;
+            state = loadState(year);
+            renderBoard(year);
+        };
+    }
+
+    function getEl(id) {
+        return document.getElementById(id);
+    }
 
     function flipBoard() {
-        var inner = document.getElementById("inner");
+        var inner = getEl("inner");
         inner.className = inner.className ? "" : "flipped";
     }
 
@@ -41,6 +56,8 @@
             renderCell(d.getMonth(), d.getDate() - 1, i++);
             d.setDate(d.getDate() + 1);
         }
+        // render year
+        getEl("year").innerText = year + "";
     }
 
     function renderCell(mon, day, index) {
